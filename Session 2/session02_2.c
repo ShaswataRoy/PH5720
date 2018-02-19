@@ -21,8 +21,8 @@ void main()
 	{
 		h = pow(10,-n);
 		der = second(x,h);
-		rel_err = (der-exp(x))/exp(x);
-		fprintf(fp,"%.15f\t%.15f\n",h,rel_err);
+		rel_err = fabs((der-exp(x))/exp(x));
+		fprintf(fp,"%.15f\t%.15f\n",log(h),log(rel_err));
 	}
 	fclose(fp);
 }
